@@ -1,0 +1,10 @@
+<body>
+    <ul>
+        {% for item in object_list %}
+            <li> {{item.product.title}} | {{item.quantity}} <br>
+                {{item.subtotal}} <br>
+                <small><a href="{% url 'add_to_cart' item.pk %}"> Click here to view this item</a></small></li>
+            </li>
+        {% endfor %} 
+    </ul>
+</body>

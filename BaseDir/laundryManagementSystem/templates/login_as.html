@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'customer/css/bootstrap.min.css' %}">
+    <!-- font-awesome -->
+    <script src="./js/all.js"></script>
+
+
+    <!--Date picker-->
+    <link rel="stylesheet" href="{% static 'customer/css/jquery.datetimepicker.min.css' %}">
+    <script src="{% static 'customer/js/jquery.js' %}"></script>
+    <script src="{% static 'customer/js/jquery.datetimepicker.full.js' %}"></script>
+    <!-- Even the javascript files are contained within the static folder so they should be linked like we do above-->
+    
+    <!-- Fontawesome Link (Make sure to add this link to use these icons)-->
+    <script src="https://kit.fontawesome.com/a45f84b068.js" crossorigin="anonymous"></script>
+    <!-- project2-baby.css -->
+    <link rel="stylesheet" href="{% static 'customer/css/project-baby3.css' %}">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <title>Hello, world!</title>
+  </head>
+<!-- second for sign in as customer/laundryman/company-->
+
+<body>
+       <!-- filler section -->
+       <section id="filler3" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center" style="margin-top: 150px">
+                    <h1 style="color: khaki">Login as </h1>
+                    <p class="lead text-white">
+                        <section id="team" class="py-5 bg-light">
+                            <div class="container">
+                               
+                                <div class="row">
+                                    <!-- team member -->
+                                    <div class="col-md-6 col-lg-4 my-3">
+                                        <div class="card">
+                                            
+                                            <div class="card-body">
+                                                <h5 class="card-title text-capitalize font-weight-bold">Customer</h5>
+                                                <p class="card-text">
+                                                    Login as Customer for service
+                                                </p>
+                                                    <a href="{% url 'customer_login' %}" class="text-warning btn btn-outline-warning text-uppercase" style="text-decoration:none">press here</a>
+                                                </button>
+                                            </div>
+                                            <div class="card-footer bg-secondary d-flex justify-content-center">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end of first team member -->
+                                    <div class="col-md-6 col-lg-4 my-3">
+                                        <div class="card">
+                                            
+                                            <div class="card-body">
+                                                <h5 class="card-title text-capitalize font-weight-bold">Laundry</h5>
+                                                <p class="card-text">
+                                                    Login as individual Laundryman
+                                                </p>
+                                                    <a href="{% url 'laundry_login' %}" class="text-warning btn btn-outline-warning text-uppercase" style="text-decoration:none">press here</a>
+                                                </button>
+                                            </div>
+                                            <div class="card-footer bg-secondary d-flex justify-content-center">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 my-3">
+                                        <div class="card">
+                                            
+                                            <div class="card-body">
+                                                <h5 class="card-title text-capitalize font-weight-bold">Company</h5>
+                                                <p class="card-text">
+                                                    Login as laundry company
+                                                </p>
+                                                    <a href="{% url 'company_login' %}" class="text-warning btn btn-outline-warning text-uppercase" style="text-decoration:none">press here</a>
+                                                </button>
+                                            </div>
+                                            <div class="card-footer bg-secondary d-flex justify-content-center">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </p>
+            
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of filler section -->
+</body>
+</html>

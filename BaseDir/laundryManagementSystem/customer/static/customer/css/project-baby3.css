@@ -1,0 +1,197 @@
+body {
+	font-family: monospace;
+}
+.height {
+	min-height: 100vh;
+}
+.size {
+	font-size: 2rem;
+}
+.title-underline {
+	width: 260px;
+	height: 15px;
+	margin: 0 auto;
+	/* background: blue!important; */
+}
+.height-80 {
+	min-height: 80vh;
+}
+.about-picture {
+	background-image: url(../image/man-wearing-hoodie-forming-chakra-wallpaper-1694348.jpg);
+	background-size: contain;
+	/* background-position: center; */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.title {
+	width: 455px;
+	height: 15px;
+	margin: 0 auto;
+}
+.underline {
+	width: 467px;
+	height: 15px;
+	margin: 0 auto;
+}
+#filler {
+	/* background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)), */
+	/* url(../image/grayscale-photography-of-two-men-standing-near-building-2951457.jpg)center/cover no-repeat fixed; */
+	background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)),
+		url(../image/filler.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+#filler2 {
+	/* background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)), */
+	/* url(../image/grayscale-photography-of-two-men-standing-near-building-2951457.jpg)center/cover no-repeat fixed; */
+	background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)),
+		url(../image/coverit.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+#filler3 {
+	/* background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)), */
+	/* url(../image/grayscale-photography-of-two-men-standing-near-building-2951457.jpg)center/cover no-repeat fixed; */
+	background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .9)),
+		url(../image/use.jpeg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+.only {
+	width: 155px;
+	height: 15px;
+	margin: 0 auto;
+}
+.dude {
+	width: 250px;
+	height: 15px;
+	margin: 0 auto;
+}
+.no-stylish {
+	font-size: 1.5rem;
+	color: black !important;
+}
+.my_picture {
+	height: 20px;
+	width: 20px;
+}
+.two {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.img-resize {
+	height: 250px;
+width: 490px;
+margin-top: -16px;
+margin-right: 10px;
+padding-left: -4px;
+padding-right: -68px;
+margin-right: auto;
+padding-right: -5px;
+border: none;
+border: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+border-style: non
+}
+
+.circle {
+	margin-left: -13px;
+	width: 25px;
+	height: 25px;
+	background: red; 
+	-moz-border-radius: 70px; 
+	-webkit-border-radius: 70px; 
+	border-radius: 70px;
+}
+
+.customized {
+	margin-left: -5.5rem;
+}
+.checkout {
+	margin-top: 0.99rem;
+	background-color: white;
+	margin-left: 80px;
+	margin-right: -0.25rem !important;
+}
+.nolimit {
+	background-color: #e7e7ef;
+}
+.gotgo {
+	width: 100px;
+	height: 80px;
+}
+
+.less {
+	margin-top: 0.7rem;
+}
+.fit {
+	margin-top: 2px;
+}
+.tr {
+	margin-top: -10px;
+	margin-bottom: -25px;
+}
+.coolers {
+	background-color: white;
+	margin-top: 1rem;
+	margin-left: -8.0rem;
+}
+.mar {
+	margin-top: 18px;
+	margin-right: 0%;
+	width:auto;
+	height: 60	0px;
+}
+.arr {
+	margin-top: 9px;
+	margin-left: 345px;
+}
+
+.cust {
+	margin-top: 25px;
+	margin-left: 2px;
+}
+.cus {
+	margin-left: 80px;
+	margin-right: 9px;
+}
+.nge {
+	margin-left: -10px;
+}
+.shu {
+	margin-top:3px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	font-weight: bold;
+}
+.pan {
+	margin-top:10px;
+}
+.dow {
+	margin-bottom: 6px;
+}
+.off {
+	margin-left: 580px;
+}
+
+.kati {
+	color: khaki;
+}
+#sog {
+	margin-top: 50px;
+	margin-left: 600px;
+}
+

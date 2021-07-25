@@ -1,0 +1,84 @@
+
+{% extends 'base0.html' %}
+
+
+  
+
+{%block content %}
+        <!-- team section -->
+        <section id="team" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h1 class="display-1 text-uppercase text-dark mb-0">
+                            <strong>Laundry Firms</strong>
+                        </h1>
+                        <div class="title-underline bg-warning"></div>
+                        <p class="mt-2 text-capitalize text-muted size text-center w-50 h-25 mx-auto">The list below includes a list of individual laundry firms.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for laundry in laundry_profiles %}
+                    <!-- team member -->
+                    <div class="col-md-6 col-lg-4 my-3">
+                        <div class="card">
+                            <img src="{{laundry.photo.url}}" alt="my-image" class="card-img-top" style="width:348px; height:230.75px;">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <ul class="list-group list-group-flush font-weight-bold text-center">
+                                            <li class="list-group-item" style="text-align:left;">name: <span class="bg-info">{{laundry.user}}</span></li>
+                                            <li class="list-group-item text-capitalize" style="text-align:left;">Location: <span class="bg-info">{{laundry.region}}, {{laundry.district}} {{laundry.ward}}</span></li>
+                                        </ul>
+                                </p>
+                                <a href="{% url 'pricing' migo=laundry.user.id %}" class="text-warning btn btn-outline-warning text-uppercase" style="text-decoration:none">press here</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                    <!-- end of first team member -->
+
+                    
+                </div>
+                
+                <!-- Bootrap Pagination-->
+                <nav aria-label="..." class="float-right">
+                    <ul class="pagination">
+                        {% if laundry_profiles.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ laundry_profiles.previous_page_number }}">Previous</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled = "true">Previous</a>
+                        </li>
+
+                        {% endif %}
+                        {% for i in laundry_profiles.paginator.page_range %}
+                        {% if i == laundry_profiles.number %}
+                        <li class="page-item active"><a class="page-link">{{i}}</a></li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                       
+                        {% if laundry_profiles.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{laundry_profiles.next_page_number}}">Next</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled = "true">Next</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <!-- end of the team section -->
+{% endblock %}
+
+
+

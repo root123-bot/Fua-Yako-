@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Laundry Reg</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+
+
+		<!-- BOOTSTRAP LINK -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'laundryman/css/style.css' %}">
+	</head>
+	<body>
+		<div class="wrapper">
+            <form action="" method="POST" id="wizard">
+
+							{% csrf_token %}
+        		<!-- SECTION 1 -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="{% static 'laundryman/image/customizedLaundry.jpg' %}" alt="">
+						</div>
+						<div class="form-content" >
+							<div class="form-header">
+								<h3>Registration</h3>
+							</div>
+							<p>Please fill with your details</p>
+							<div class="form-row">
+								<div class="form-holder">
+									{{form.first_name}}
+								</div>
+								<div class="text-danger" style="color:red;">{{form.errors.first_name}}</div>
+
+								<div class="form-holder">
+									{{form.last_name}}
+								</div>
+								<div class="text-danger" style="color:red;">{{form.errors.last_name}}</div>
+
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									{{form.email}}
+								</div>
+								<div class="text-danger" style="color:red;">{{form.errors.email}}</div>
+
+								<div class="form-holder">
+									{{form.password1}}
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-holder">
+									{{form.password2}}
+								</div>
+								<div class="text-danger" style="color:red;">{{form.errors.password2}}</div>
+
+								<div class="form-holder" style="align-self: flex-end; transform: translateY(4px);">
+									<div class="form-group">
+													<button type="submit" style="background-color: #008CBA; font-size:20px; border-radius:12px;" class="btn btn-outline-primary submit">submit</button>
+									</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+                </section>
+
+
+
+
+						</div>
+					</div>
+                </section>
+            </form>
+		</div>
+
+		<!-- JQUERY -->
+		<script src="js/jquery-3.3.1.min.js"></script>
+
+		<!-- JQUERY STEP -->
+		<script src="js/jquery.steps.js"></script>
+		<script src="js/main.js"></script>
+		<!-- Template created and distributed by Colorlib -->
+
+
+</body>
+</html>

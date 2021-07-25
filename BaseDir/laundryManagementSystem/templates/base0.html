@@ -1,0 +1,502 @@
+<!-- PRICING -->
+
+
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">  
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'customer/css/bootstrap.min.css' %}">
+    <!-- font-awesome -->
+    <script src="./js/all.js"></script>
+
+
+    <!--Date picker-->
+    <link rel="stylesheet" href="{% static 'customer/css/jquery.datetimepicker.min.css' %}">
+    <script src="{% static 'customer/js/jquery.js' %}"></script>
+    <script src="{% static 'customer/js/jquery.datetimepicker.full.js' %}"></script>
+    <!-- Even the javascript files are contained within the static folder so they should be linked like we do above-->
+    
+    <!-- Fontawesome Link (Make sure to add this link to use these icons)-->
+    <script src="https://kit.fontawesome.com/a45f84b068.js" crossorigin="anonymous"></script>
+    <!-- project2-baby.css -->
+    <link rel="stylesheet" href="{% static 'customer/css/project-baby3.css' %}">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    {% block title %}
+    <title>Hello, world!</title>
+    {% endblock title %}
+  </head>
+  <body class="nolimit">
+
+    <header>
+      <nav class ="navbar navbar-expand-md navbar-light bg-info border-bottom">
+        <div class="container-fluid">
+          <a class = "navbar-brand" href="">Fua Yako </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item-active">
+                <a class="nav-link" aria-current="page" href="{%url 'viewLaundersAfterLogin' %}"> Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="viewprofile/">Profile</a>
+              </li>
+
+            </ul>
+            <form class="d-flex needs-validation" action = "{% url 'searched_list' %}" novalidate>
+              <input class="form-control me-2" type="search" placeholder = "search" aria-label="search" name="search" required>
+              <button class="btn btn-outline-dark rounded ml-2" type="submit"> Search </button>
+            </form>
+          </div>
+        </div>
+        <a href="/accounts/logout/" class="btn btn-danger d-flex align-items-end">Logout</a>
+        {% block carticon %}
+
+        {% endblock %}
+      </nav>
+
+
+       {% block content %}
+       <!-- pricing section -->
+<section id="pricing" class="py-5 bg-secondary">
+<div class="container-fluid">
+   <!-- section title -->
+   <div class="row">
+    {{product_list}}
+
+       <div class="col text-center">
+           <h1 class="display-4 text-uppercase text-dark mb-0">
+               <strong>pricing</strong>
+           </h1>
+           <div class="dude bg-success"></div>
+           <p class="mt-2 text-capitalize text-white">Select the number of clothes your want for laundry and add them to cart.</p>
+       </div>
+   </div>
+   <!-- end of section title -->
+   <div class="row">
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Jeans</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/jean.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>1200<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Jacket and Coat</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/jack.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>2000<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Dress/Gown</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/dress.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>3500<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Shirt/Tshirt</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/coffee-stained-shirt.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>600<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Sweaters</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/sweat.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>800<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Shoes</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/dirt shoes.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>750<sub>/one pair</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of pair:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Trousers</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/suru.jpeg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>500<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Suit</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/sutiiii.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>7500<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+       <!-- card -->
+       <div class="col-md-4  my-4">
+           <div class="card">
+               <!-- card header -->
+               <div class="card-header bg-primary text-white text-center py-4">
+                   <h3>Skirts</h3>
+               </div>
+               <!-- card title -->
+               <div class="card-title text-center my-3">
+                 <img src="{% static 'customer/image/collect.jpg' %}" href="#" class="img-resize">
+               </div>
+               <!-- list -->
+                   <ul class="list-group list-group-flush font-weight-bold text-center">
+                      <h4 class="font-weight-bold text-info"><sup>Tsh</sup>1200<sub>/one</sub></h4>
+                      <form method="post" action = "#">
+                        {% csrf_token %}
+                       <li class="list-group-item"><label> Number of clothes:<input type ="number" name="number"></label></li>
+                   </ul>
+               <!-- card-footer -->
+               <div class="card-footer">
+                   <input type="submit" class="btn btn-outline-dark btn-block text-capitalize" value="add to cart">
+               </div>
+             </form>
+           </div>
+       </div>
+       <!-- end of card -->
+
+   </div>
+</div>
+</section>
+        {% endblock %}
+
+
+
+
+
+      <footer id="footer" class="bg-secondary py-0" style="height: 300px;">
+        <div class="container">
+            <!-- section title -->
+            <div class="row">
+                <div class="col text-center">
+                    <h1 class="display-3 text-#uppercase text-dark">
+                        <strong>Get in touch</strong>
+                    </h1>
+                    <div class="title-underline bg-danger pb-0" style="margin-bottom:10px;"></div>
+                    <p class="mt-2 text-#capitalize text-white size text-center w-50 h-25 mx-auto">Follow us in social media.</p>
+                </div>
+            </div>
+            <!-- end of the section title -->
+            <div class="row">
+                <div class="col text-center">
+                    <a href="#" class="btn">
+                        <i class="fab fa-facebook fa-3x text-primary m-2"></i>
+                    </a>
+                    <a href="#" class="btn">
+                        <i class="fab fa-twitter fa-3x text-primary m-2"></i>
+                    </a>
+                    <a href="#" class="btn">
+                        <i class="fab fa-instagram fa-3x text-primary m-2"></i>
+                    </a>
+                    <a href="#" class="btn">
+                        <i class="fab fa-google-plus fa-3x text-primary m-2"></i>
+                    </a>
+                    <!-- hii class d-block itaifanya button yetu iwe block level element yaan iende kwa chini ya zingine then hapa kaaply mx-auto my-4 hii usihofu itachukua width ndogo ile ya kwake tu kama iliyoukuepo pale element
+                    ilivyokua inline, hii ni tofauti kabisa na class ya btn-block coz hii itafanya itakeover full width available so ili ujue tofauti yake cheki hapo juu tumetumia btn-block then check na hapa chine tumetumia d-block hii d-block means display-block -->
+                    <!-- <button type="button" class="btn btn-danger my-4 mx-auto d-block" data-toggle="modal" data-target="#myModal">log out</button> -->
+                    <!-- coz hii modal inatengenezwa mara nyingi in button so tutadili sana na tag ya button utaziona nimeweka class zake tofauti tofauti, coz tunataka user akigusa tu button ya log out basi modal itokee nigga
+                    see notes to trigger the modal window you need to use a button or a link tag -->
+                </div>
+            </div>
+        </div>
+    </footer>
+ <!--
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+</div> -->
+
+
+
+
+
+<!--<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="{% static 'customer/js/jquery.datetimepicker.full.min.js' %}"></script>
+    <script>
+      $('#picker1').datetimepicker({
+        timepicker:true,
+        datepicker:true,
+        format:'Y-m-d H:i', //format time
+        hours12: false,
+        step: 30, 
+        yearStart:2021,
+        yearEnd:2021,
+        onShow: function(ct) {
+          this.setOptions({
+            maxDate: $('#picker2').val() ? $ ('#picker2').val():false
+          })
+        }
+      })
+      $('#picker2').datetimepicker({
+        timepicker:true,
+        datepicker:true,
+        format:'Y-m-d H:i', //format time
+        hours12: false,
+        step: 30, 
+        yearStart:2021,
+        yearEnd:2021,
+        onShow: function(ct) {
+          this.setOptions({
+            minDate: $('#picker1').val() ? $ ('#picker1').val():false
+          })
+        }
+      })
+    </script>
+    <script>
+      setTimeout(function(){
+        if ($('#msg').length > 0) {
+          $('#msg').remove();
+        }
+      }, 10000)   //this is the duration for our flash message, 10 seconds
+    </script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict';
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+    </script>
+  </body>
+</html>

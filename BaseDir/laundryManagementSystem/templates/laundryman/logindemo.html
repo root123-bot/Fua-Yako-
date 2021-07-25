@@ -1,0 +1,12 @@
+{% load crispy_forms_filters %}
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <form method='POST', action = "">
+      {% csrf_token %}
+      {{form|crispy}}
+      <input type="submit" name="submit">
+    </form>
+  </body>
+<html>

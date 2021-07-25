@@ -1,0 +1,70 @@
+{% extends 'base0.html' %}
+
+{% block carticon %}
+        <a href="{% url 'mycart' %}" style="text-decoration:none;"><i class="fas fa-shopping-cart fa-2x pl-2"></i><sup><div class="circle bg-danger"><span class="floated text-center font-weight-bold">0</span></div></sup></a>
+{% endblock %}
+
+
+{% block content %}
+    {% if messages %}
+        <ul class='messages'>
+            {% for msg in messages %}
+                
+                    <div class="alert alert-{{msg.level_tag}}" role="alert">
+                        {{msg.message}}
+                    </div>
+                
+            {% endfor %}
+        </ul>
+    {% endif %}
+<section id="pricing" class="py-5 bg-secondary">
+    <div class="container-fluid">
+       <!-- section title -->
+       <div class="row">
+        <!--{{product_list}}-->s
+    
+           <div class="col text-center">
+               <h1 class="display-4 text-uppercase text-dark mb-0">
+                   <strong>pricing</strong>
+               </h1>
+               <div class="dude bg-success"></div>
+               <p class="mt-2 text-capitalize text-white">Select the number of clothes your want for laundry and add them to cart.</p><hr>
+           </div>
+       </div>
+       <!-- end of section title -->
+       <div class="row">
+        {% for product in product_list %}
+        
+           <!-- card -->
+           <div class="col-md-4  my-4">
+               <div class="card">
+                   <!-- card header -->
+                   <div class="card-header bg-primary text-white text-center py-4">
+                       <h3>{{product.title}}</h3>
+                   </div>
+                   <!-- card title -->
+                   <div class="card-title text-center my-3">
+                     <img src="{{product.image.url}}" href="#" class="img-resize">
+                   </div> 
+                   <!-- list -->
+                       <ul class="list-group list-group-flush font-weight-bold text-center">
+                          <h4 class="font-weight-bold text-info"><sup>Tsh</sup>{{product.price}}<sub>/one</sub></h4>
+                          <form method="post" action = "#">
+                            {% csrf_token %}
+                       </ul>
+                   <!-- card-footer -->
+                   <div class="card-footer">
+
+                    <!-- make sure kama una link inayo-contain the additional url like this <int:pk> make sure kwenye hiyo link hutumii button tag like <button> so hapa kama unataka button feature ni bora utumie link <a> utumie class ya btn btn-info btn-block just like that unakua ushamaliza-->
+                    <a href="{% url 'realaddtocartbtn' pro=product.id %}" style="text-decoration:none;" class="btn btn-info btn-block">Add to cart</a>
+                   </div>
+                 </form>
+               </div>
+           </div>
+           <!-- end of card -->
+           
+           {% endfor %}
+        </div>
+    </div>
+</section>
+{%endblock %}

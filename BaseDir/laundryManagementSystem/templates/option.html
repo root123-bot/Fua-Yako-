@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'customer/css/bootstrap.min.css' %}">
+    <!-- font-awesome -->
+    <script src="./js/all.js"></script>
+
+
+    <!--Date picker-->
+    <link rel="stylesheet" href="{% static 'customer/css/jquery.datetimepicker.min.css' %}">
+    <script src="{% static 'customer/js/jquery.js' %}"></script>
+    <script src="{% static 'customer/js/jquery.datetimepicker.full.js' %}"></script>
+    <!-- Even the javascript files are contained within the static folder so they should be linked like we do above-->
+    
+    <!-- Fontawesome Link (Make sure to add this link to use these icons)-->
+    <script src="https://kit.fontawesome.com/a45f84b068.js" crossorigin="anonymous"></script>
+    <!-- project2-baby.css -->
+    <link rel="stylesheet" href="{% static 'customer/css/project-baby3.css' %}">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    {% block title %}
+    <title>Hello, world!</title>
+    {% endblock title %}
+  </head>
+    <body class="nolimit" id="filler2">
+
+        <header>
+          <nav class ="navbar navbar-expand-md navbar-light bg-info border-bottom">
+            <div class="container-fluid">
+              <a class = "navbar-brand" href="">Fua Yako </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <li class="nav-item-active">
+                    <a class="nav-link" aria-current="page" href="{%url 'viewLaundersAfterLogin' %}"> Home </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="viewprofile/">Profile</a>
+                  </li>
+    
+                </ul>
+                <form class="d-flex needs-validation" action = "{% url 'searched_list' %}" novalidate>
+                  <input class="form-control me-2" type="search" placeholder = "search" aria-label="search" name="search" required>
+                  <button class="btn btn-outline-dark rounded ml-2" type="submit"> Search </button>
+                </form>
+              </div>
+            </div>
+            <a href="/accounts/logout/" class="btn btn-danger d-flex align-items-end">Logout</a>
+            {% block carticon %}
+    
+            {% endblock %}
+          </nav>
+    
+        <div>
+             <div style="margin-top: 300px;">
+                <h2 style="align-items: center;" class="font-weight-bold text-center kati">Here we go, select either of the  link below to access available Individual laundries or Laundry Companies</h2> 
+                <div id="sog"><a href="{% url 'listOfLaundries' %}"class="btn btn-outline-warning" id="cen1" style="color: khaki;">Individual Laundry</a> <a href="{% url 'listOfCompanies' %}"class="btn  btn-outline-warning" id="cen2" style="color: khaki;">Laundry Companies</a> </div>
+            </div>
+        </div>
+  </body>
+
+</html>

@@ -1,0 +1,8 @@
+{% extends "base0.html" %}
+
+
+{% block content %}
+{% if request.user.is_authenticated %} Welcome <h1><strong>'{{request.user.username }}'</strong></h1>
+{% else %} <div class="text-info">Please login first to access your profile</div>
+{% endif %}
+{% endblock content %}

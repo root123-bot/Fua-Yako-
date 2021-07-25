@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>company profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a45f84b068.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{% static 'laundryman/css/both_of_them.css' %}"> 
+
+    <!--This gonna make on hovering on the table row the cursor to change to be pointer-->
+    <style>
+      tr[data-href] {
+        cursor: pointer;
+      }
+      tr:hover {color:blue;}
+
+    </style>
+  </head>
+  <body>  
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url({{pic}});"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="company_profile.html">Profile</a>
+	          </li>
+	          <li>
+	              <a href="{% url 'com_received_order' %}"> Received Order</a>
+	          </li>
+	          <li>
+              <a href="{% url 'comWallet' %}">my walet</a>
+	          </li>
+	          <li>
+              <a href="#">change password</a>
+	          </li>
+	        </ul>
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'com_received_order' %}"><i class="far fa-bell fa-2x text-warning"></i></a>
+                </li>  
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary ml-3" href="/accounts/logout">logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+         <!-- my code start here-->
+            <!-- Your notification will be displayed here -->
+            <h4 class="text-center font-weight-bold display-4"> Your notifications are displayed below </h4>
+            <table class="table col-md-6" class="hoverTable" style="margin-left: 300px;">
+
+                <tbody>
+                    {% if queryset %}
+                      {% for query in queryset %}
+                        <tr class="clickable-row" data-href="{% url 'viewCompNotification' notification_id=query.id %}">
+                            <td><i class="far fa-envelope d-inline fa-3x" style="color: black;"></i><small class="d-inline" style="margin-bottom: 50px; margin-left: 5px;">view notification</small><a href="" class="d-inline" style="margin-top: 0px; margin-left: 550px;"><i class="fas fa-trash"></i></a>
+                            </td> 
+                        </tr>
+                      {% endfor %}
+                    {% endif %}
+
+                </tbody>
+          </table>
+
+
+            {{queryset}}
+      <!-- my Code end here-->
+      </div>
+		</div>
+
+    <script src="{% static 'company/js/jquery.min.js' %}"></script>
+    <script src="{% static 'company/js/popper.js' %}"></script>
+    <script src="{% static 'company/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'company/js/main.js' %}"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(document.body).on("click", "tr[data-href]", function () {
+          window.location.href = this.dataset.href;
+        })
+      })
+    </script>
+  </body>
+</html>

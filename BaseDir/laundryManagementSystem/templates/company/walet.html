@@ -1,0 +1,119 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>my wallet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a45f84b068.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{% static 'laundryman/css/both_of_them.css' %}"> 
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li >
+	            <a href="{% url 'company_profile' %}">Profile</a>
+	          </li>
+	          <li >
+	              <a href="{% url 'com_received_order' %}"> Received Order</a>
+	          </li>
+	          <li class="active">
+              <a href="{% url 'comWallet' %}">my walet</a>
+	          </li>
+	          <li>
+              <a href="#">change password</a>
+	          </li>
+	        </ul>
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'com_received_order' %}"><i class="far fa-bell fa-2x text-warning"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary ml-3" href="#">logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+         <!-- my code start here-->
+        <table class="table table-dark table-borderless" id="fom">
+           <h2 class="text-warning">Payment details</h2>
+  <thead>
+    <tr>
+      <th scope="col"> Date Placed</th>
+      <th scope="col">Order ID</th>
+      <th scope="col">Price</th>
+      <th scope="col">Order Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td>235</td>
+      <td>2500/=</td>
+      <td><button class="btn btn-success"><i class="fas fa-check fa-1x text-warning"></i> Paid</button> </td>
+    </tr>
+    <tr>
+      <td scope="row">1</td>
+      <td>235</td>
+      <td>2500/=</td>
+      <td><button class="btn btn-success"><i class="fas fa-check fa-1x text-warning"></i> Paid</button> </td>
+    </tr>
+     <tr>
+      <td scope="row">1</td>
+      <td>235</td>
+      <td>2500/=</td>
+      <td><button class="btn btn-success"><i class="fas fa-check fa-1x text-warning"></i> Paid</button> </td>
+    </tr>
+     <tr>
+      <td scope="row">1</td>
+      <td>235</td>
+      <td>2500/=</td>
+      <td><button class="btn btn-success"><i class="fas fa-check fa-1x text-warning"></i> Paid</button> </td>
+    </tr>
+     <tr>
+      <td scope="row"> 12/01/2020</td>
+      <td>235</td>
+      <td>2500/=</td>
+      <td><button class="btn btn-success"><i class="fas fa-check fa-1x text-warning"></i> Paid</button> </td>
+    </tr>
+  </tbody>
+</table>
+
+     <!-- my code end here-->
+      </div>
+		</div>
+
+    <script src="{% static 'company/js/jquery.min.js' %}"></script>
+    <script src="{% static 'company/js/popper.js' %}"></script>
+    <script src="{% static 'company/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'company/js/main.js' %}"></script>
+  </body>
+</html>

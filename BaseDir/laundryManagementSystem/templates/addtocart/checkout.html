@@ -1,0 +1,144 @@
+{% extends 'base0.html' %}
+
+{% block content %}
+    <div class="container">
+        <br><hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Order summary</h3>
+                <a href="{% url 'mycart' %}"> Update cart </a>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Items() </td>
+                            <td class="font-weight-bold"> Tsh {{cart.total}}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Assigned to</td>
+                            <td class="font-weight-bold"> {{name}}</td> 
+                        </tr>
+                        <tr>
+                            <td> Completion date </td>
+                            <td class="font-weight-bold"><strong>{{ended}}</strong></td>
+                        </tr>
+                        <tr> 
+                            <td>Mode of delivery</td>
+                            <td class="font-weight-bold"><strong>{{mode}}</strong></td> 
+                        </tr>
+                        </div>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3>Checkout Form </h3><hr>
+                {% if mode == 'Door step pickup' %}
+                <form action ="" method="POST" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    <!--{{form.as_p}}-->
+                    <label class="shu">Physical address</label>
+                    <input type="text" class="form-control" id="validationCustom01" name="address" required>
+                    <label class="shu">Phone number</label>
+                    <input type="number" class="form-control" maxlength="10" name="phone" required>
+                    <div class= "row cust">
+                    <label class="font-weight-bold">District:</label>
+                    <select name="district" required>
+                        <option value="Ilala">Ilala</option>
+                        <option value="Kinondoni">Kinondoni</option>
+                        <option value="Temeke">Temeke</option>
+                        <option value="Ubungo">Ubungo</option>
+                        <option value="Kigamboni">Kigamboni</option>
+                    </select> 
+                    <label class="cus font-weight-bold">Ward:</label>
+                    <input type="text" class="form-control col-4" name="ward" required>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="shu">Street</label>
+                            <input type="text" class="form-control" name="street" required>
+                        </div>
+                        <div class="col nge">
+                            <label class="shu">Zipcode</label>
+                            <input type="text" class="form-control" maxlength="5" name="code" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <label class="font-weight-bold pan">Payment</label>
+                    <div class="form-check dow">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Credit card
+                            </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Debit card
+                        </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            M-Pesa
+                        </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Halo Pesa
+                        </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Tigo Pesa
+                        </label>
+                    </div>
+                    
+                    </div>
+                    <input class="btn btn-info my-2 off" type="submit" value="Place order">
+                </form>
+                {% else %}
+                <form method = 'POST'>
+                    {% csrf_token %}
+                    <div>
+                        <label class="font-weight-bold pan">Payment</label>
+                    <div class="form-check dow">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Credit card
+                            </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Debit card
+                        </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            M-Pesa
+                        </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Halo Pesa
+                        </label>
+                    </div>
+                    <div class="form-check dow">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Tigo Pesa
+                        </label>
+                    </div>
+                    <label class="shu">Payment card number/Phone number</label>
+                    <input type="number" class="form-control" maxlength="10" name="pay" required>
+                    <input class="btn btn-info my-2 off" type="submit" value="Finish" style="margin-left: 0px; margin-top:10px;">
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

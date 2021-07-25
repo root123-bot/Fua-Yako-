@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <ul>
+        <!-- this post.pk is rendered from here on the
+        template this means unlike normam view function
+        which needs a pk defined on url to be passed 
+        first, here in class based view a primary 
+        key is passed from here when rendering the 
+        template where by default it will go grabing 
+        the actual pk/id of individual record-->
+    {% for post in object_list %}
+        <li><a href="{% url 'details' post.pk %}">
+            {{post.title}}</a> - {{post.author.first_name}} {{post.author.last_name}}<br>
+            {{post.body}}
+        </li>
+    {% endfor %}
+    </ul>
+</body>

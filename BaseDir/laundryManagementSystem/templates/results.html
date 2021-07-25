@@ -1,0 +1,77 @@
+{% extends 'base0.html' %}
+
+{% block content %}
+{% if company or laundry %}
+ <!-- team section -->
+ <section id="team" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="display-1 text-uppercase text-dark mb-0">
+                    <strong>Laundry Firms</strong>
+                </h1>
+                <div class="title-underline bg-warning"></div>
+                <p class="mt-2 text-capitalize text-muted size text-center w-50 h-25 mx-auto">The list below includes individual laundry firms and Laundry companies.</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for com in company %}
+            <!-- team member -->
+            <div class="col-md-6 col-lg-4 my-3">
+                <div class="card">
+                    <img src="{{com.photo.url}}" alt="my-image" class="card-img-top" style="width:348px; height:230.75px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize font-weight-bold">Category: <span class="bg-info">{{com.category}}</span></h5>
+                        <p class="card-text">
+                            <ul class="list-group list-group-flush font-weight-bold text-center">
+                                    <li class="list-group-item" style="text-align:left;">Company name: <span class="bg-info">{{com.user}}</span></li>
+                                    <li class="list-group-item" style="text-align:left;">Address: <span class="bg-info">{{com.address}}</span></li>
+                            </ul>
+                        </p>
+                        <button type="button" class="btn btn-outline-warning text-uppercase">
+                            <a href="tests/" class="text-warning" style="text-decoration:none">press here</a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            {% endfor %}
+
+            <!-- end of first team member -->
+
+            {% for lau in laundry %}
+            <!-- team member -->
+            <div class="col-md-6 col-lg-4 my-3">
+                <div class="card">
+                    <img src="{{lau.photo.url}}" alt="my-image" class="card-img-top resize" style="width:348px; height:230.75px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-capitalize font-weight-bold">Category: <span class="bg-info">{{lau.category}}</span></h5>
+                        <p class="card-text">
+                            <ul class="list-group list-group-flush font-weight-bold text-center">
+                                    <li class="list-group-item" style="text-align:left;">Name: <span class="bg-info">{{lau.user}}</span></li>
+                                    <li class="list-group-item text-capitalize" style="text-align:left;">Location: <span class="bg-info">{{lau.region}}, {{lau.district}} {{lau.ward}}</span></li>
+                            </ul>
+                        </p>
+                        <button type="button" class="btn btn-outline-warning text-uppercase">  
+                            <a href="tests/" class="text-warning" style="text-decoration:none">press here</a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% else %}
+
+
+<p class="text-muted text-center display-4 mt-4">"No results  found for your search"  </p><br><br><br><br><br><br><br>s
+
+{% endif %}
+
+<!-- end of the team section -->
+{% endblock %}

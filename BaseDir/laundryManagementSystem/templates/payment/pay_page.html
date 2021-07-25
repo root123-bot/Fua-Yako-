@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change number</title>
+    <link rel="stylesheet" href="{% static 'payment/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'payment/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/a45f84b068.js" crossorigin="anonymous"></script>
+</head> 
+<body >
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <img src="{% static 'payment/image/mychoice.jpg' %}" style="width: 100%; height: 40vh;">
+    </div>
+    <form method = "POST" action="">
+      {% csrf_token %}
+    <div class="col-12 text-center">
+      <h2 class="text-center my-5"><strong>Confirm Your Mobile Number</strong></h2>
+      <input type="number" value="{{accNo}}" name="changeNo"><input type="submit" class="btn btn-warning ml-3" name="save">
+    </div>
+    </form>
+     <div class="col-12 text-center"> <a href="{% url 'finishHim' %}" class="btn btn-primary my-5 px-4">Pay with this number</a></div>
+  </div>
+ </div> 
+
+    <!-- Button trigger modal -->
+
+
+
+
+    <!--bootstrap script js-->
+    <script src="{% static 'payment/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'payment/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,3 +1,5 @@
+libadns1-dev
+adns-tools
 adns===1.4-py1
 AdvancedHTTPServer==2.2.0
 aiodns==2.0.0
